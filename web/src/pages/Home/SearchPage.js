@@ -1,6 +1,6 @@
 import React from 'react';
 import { Grid, Card, Box, CardHeader, CardContent, Paper } from '@material-ui/core'
-import SearchContent from '../../Components/SearchContent';
+import SearchContent from '../../components/SearchContent';
 
 const SearchPage = () => {
     return (

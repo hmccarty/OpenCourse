@@ -1,8 +1,8 @@
 import React,  {useEffect, useState} from 'react';
 import { Grid,  Box, CardHeader, Paper, Divider } from '@material-ui/core'
-import UserRoadmapsContent from '../../Components/UserRoadmapsContent';
-import UserProfileContent from '../../Components/UserProfileContent';
-import AddMapForm from '../../Components/AddMapForm';
+import UserRoadmapsContent from '../../components/UserRoadmapsContent';
+import UserProfileContent from '../../components/UserProfileContent';
+import AddMapForm from '../../components/AddMapForm';
 import {getUser} from '../../api';
 
 const ProfilePage = () => {

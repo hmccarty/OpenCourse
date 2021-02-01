@@ -1,7 +1,7 @@
 import React, {useEffect, useState} from 'react';
 import {Grid, Card, Box, CardHeader, Paper, Divider} from '@material-ui/core'
-import UserRoadmapsContent from '../../Components/UserRoadmapsContent';
-import ExploreContent from '../../Components/ExploreContent';
+import UserRoadmapsContent from '../../components/UserRoadmapsContent';
+import ExploreContent from '../../components/ExploreContent';
 import {getUser} from '../../api';
 
 const LandingPage = () => {

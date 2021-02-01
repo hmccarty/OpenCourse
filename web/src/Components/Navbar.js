@@ -9,10 +9,10 @@ import MenuItem from '@material-ui/core/MenuItem';
 import Menu from '@material-ui/core/Menu';
 import SearchIcon from '@material-ui/icons/Search';
 import AccountCircle from '@material-ui/icons/AccountCircle';
-// import AcUnitIcon from '@material-ui/icons/AcUnit';
-import roadTripLogo from '../../images/compassLogo.png'
+import roadTripLogo from '../images/compassLogo.png';
 import { Button } from '@material-ui/core';
-import { useHistory, Link } from 'react-router-dom'
+import { useHistory, Link } from 'react-router-dom';
+import { useAuth0 } from '@auth0/auth0-react';
 
 const useStyles = makeStyles((theme) => ({
   grow: {
@@ -76,6 +76,8 @@ const Navbar = () => {
   const [searchValue, setSearchValue] = React.useState("");
 
   const isMenuOpen = Boolean(anchorEl);
+
+  const { loginWithRedirect } = useAuth0();
 
   const handleProfileMenuOpen = (event) => {
     setAnchorEl(event.currentTarget);
@@ -143,14 +145,14 @@ const Navbar = () => {
           <div className={classes.grow} />
           <div className={classes.sectionDesktop}>
             <Link to='/signup' style={{ textDecoration: 'none', color: "secondary" }}>
-              <IconButton color='secondary'>
-                Sign Up
-            </IconButton>
+              <IconButton color='secondary' onClick={() => loginWithRedirect({ screen_hint: "signup", })}>
+               Sign Up
+              </IconButton>
             </Link>
             <Link to='/login' style={{ textDecoration: 'none', color: "secondary" }}>
-              <IconButton color='secondary'>
+              <IconButton color='secondary' onClick={() => loginWithRedirect()}>
                 Log In
-            </IconButton>
+              </IconButton>
             </Link>
             <Link to='/profilePage' style={{ textDecoration: 'none', color: "secondary" }}>
               <IconButton
